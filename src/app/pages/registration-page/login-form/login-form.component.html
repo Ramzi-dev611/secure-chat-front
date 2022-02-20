@@ -1,0 +1,20 @@
+<div class="m-5">
+    <h2 class="text-center">Login</h2>
+    <div class="card-body">
+        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+            <div class="form-group my-3">
+                <label for="">Username: </label>
+                <input type="text" formControlName="username" placeholder="Username" class="form-control">
+                <span *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="text-danger">username is required</span>
+            </div>
+            <div class="form-group my-3">
+                <label for="">Password: </label>
+                <input type="password" placeholder="password" formControlName="password" class="form-control">
+                <span *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">password is required</span>
+            </div>
+            <div class="d-flex justify-content-center mt-5">
+                <button [disabled]="loginForm.invalid" class="btn btn-block btn-success px-5">Login</button>
+            </div>
+        </form>
+    </div>
+</div>

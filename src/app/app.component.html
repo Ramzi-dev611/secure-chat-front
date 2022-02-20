@@ -1,5 +1,7 @@
 <div (scroll)="changeNavbarTransparency()">
     <app-navbar [isTransparent]="navbarTransparent" [currentUri]="currentUri"></app-navbar>
     <router-outlet></router-outlet>
-    <app-footer></app-footer>
+    <div *ngIf="currentUri ==='/home'">
+        <app-footer></app-footer>
+    </div>
 </div>
