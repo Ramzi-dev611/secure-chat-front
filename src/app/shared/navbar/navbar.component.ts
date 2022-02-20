@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, DoCheck, ElementRef, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,11 +10,11 @@ import { Component, ElementRef, Input, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit{
   private toggleButton: any;
   private sidebarVisible: boolean = false;
-
-  @Input() isTransparent: boolean = true;
+  @Input() isTransparent: boolean = false;
+  @Input() currentUri: string = ''
   constructor(
     public location: Location,
-    private element: ElementRef
+    private element: ElementRef,
     ) { }
 
   sidebarOpen() {

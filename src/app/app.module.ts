@@ -6,6 +6,10 @@ import { ChatRoomComponent } from './pages/chat-room/chat-room.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { Routing } from './app.routing';
+import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
+import { RegistrationFormComponent } from './pages/registration-page/registration-form/registration-form.component';
+import { LoginFormComponent } from './pages/registration-page/login-form/login-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,11 +17,15 @@ import { Routing } from './app.routing';
     LandingPageComponent,
     ChatRoomComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    RegistrationPageComponent,
+    RegistrationFormComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
-    Routing
+    Routing,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

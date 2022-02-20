@@ -1,7 +1,7 @@
 <nav [ngClass]="{
     'navbar':true,
     'navbar-expand-lg': true,
-    'fixed-top': true,
+    'fixed-top': currentUri === '/home',
     'bg-primary': !isTransparent,
     'bg-gradient': !isTransparent,
     'navbar-dark': true
