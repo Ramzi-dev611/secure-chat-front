@@ -6,6 +6,7 @@ import { ChatRoomComponent } from './pages/chat-room/chat-room.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { Routing } from './app.routing';
+import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { Routing } from './app.routing';
     LandingPageComponent,
     ChatRoomComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    RegistrationPageComponent
   ],
   imports: [
     BrowserModule,
