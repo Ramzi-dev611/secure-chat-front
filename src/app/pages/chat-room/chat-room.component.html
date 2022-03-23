@@ -1,6 +1,6 @@
 <div class="container-fluid" style="height: 90.6vh;">
     <div class="row h-100">
-        <div class="col-3 border border-dark px-0">
+        <div class="col-3 border-right-dark px-0">
             <button class="btn btn-success btn-block m-3">Add Contact</button>
             <ul class="list-group w-100">
                 <li class="list-group-item pl-3">User 1</li>
@@ -11,13 +11,17 @@
         </div>
         <div class="col-9 h-100 position-relative px-0">
             <div class="conversation-container">
-                <div class="p-1 m-3 message-received w-50">
-                    <p class="text-white">This is a cool message</p>
-                </div>
-                <div class="p-1 m-3 row justify-content-end">
-                    <div class="message-sent w-50">
-                        <p>lorem200</p>
-                    </div>
+                <div *ngFor="let message of messages; let even = even">
+                    <span *ngIf="even">
+                        <app-message-sent
+                            [content]="message">
+                        </app-message-sent>
+                    </span>
+                    <span *ngIf="!even">
+                        <app-message-recieved
+                            [content]="message">
+                        </app-message-recieved>
+                    </span>
                 </div>
             </div>
             <div class="position-absolute bottom-0 w-100">

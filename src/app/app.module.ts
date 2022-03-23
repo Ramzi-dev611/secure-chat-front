@@ -10,6 +10,9 @@ import { RegistrationPageComponent } from './pages/registration-page/registratio
 import { RegistrationFormComponent } from './pages/registration-page/registration-form/registration-form.component';
 import { LoginFormComponent } from './pages/registration-page/login-form/login-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MessageSentComponent } from './pages/chat-room/message-sent/message-sent.component';
+import { MessageRecievedComponent } from './pages/chat-room/message-recieved/message-recieved.component';
+import { WebsocketService } from './utilities/websocket.service';
 
 @NgModule({
   declarations: [
@@ -20,14 +23,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     RegistrationPageComponent,
     RegistrationFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    MessageSentComponent,
+    MessageRecievedComponent
   ],
   imports: [
     BrowserModule,
     Routing,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [WebsocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
