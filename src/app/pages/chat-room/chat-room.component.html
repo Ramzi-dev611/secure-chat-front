@@ -11,21 +11,23 @@
         </div>
         <div class="col-9 h-100 position-relative px-0">
             <div class="conversation-container">
-                <div *ngFor="let message of messages; let even = even">
-                    <span *ngIf="even">
+                <div *ngFor="let m of this.webSocketService.chatMessages.reverse(); let even = even">
+                    <span *ngIf="!even">
                         <app-message-sent
-                            [content]="message">
+                            [content]="m.message">
                         </app-message-sent>
                     </span>
-                    <span *ngIf="!even">
+                    <span *ngIf="even">
                         <app-message-recieved
-                            [content]="message">
+                            [content]="m.message">
                         </app-message-recieved>
                     </span>
                 </div>
             </div>
             <div class="position-absolute bottom-0 w-100">
-                <input type="text" class="form-control" placeholder="What you have in mind">    
+                <form (ngSubmit)="sendMessage()">
+                    <input type="text" name="Message" [(ngModel)]="typedMessage" class="form-control" placeholder="What you have in mind">
+                </form>
             </div>
         </div>
     </div>

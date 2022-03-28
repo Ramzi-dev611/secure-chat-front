@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// import { HttpClientModule } from '@angular/common'
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { ChatRoomComponent } from './pages/chat-room/chat-room.component';
@@ -9,10 +10,10 @@ import { Routing } from './app.routing';
 import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
 import { RegistrationFormComponent } from './pages/registration-page/registration-form/registration-form.component';
 import { LoginFormComponent } from './pages/registration-page/login-form/login-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MessageSentComponent } from './pages/chat-room/message-sent/message-sent.component';
 import { MessageRecievedComponent } from './pages/chat-room/message-recieved/message-recieved.component';
-import { WebsocketService } from './utilities/websocket.service';
+import { WebSocketService } from './utilities/web-socket.service';
 
 @NgModule({
   declarations: [
@@ -29,10 +30,11 @@ import { WebsocketService } from './utilities/websocket.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     Routing,
     ReactiveFormsModule
   ],
-  providers: [WebsocketService],
+  providers: [WebSocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
