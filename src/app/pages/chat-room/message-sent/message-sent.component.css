@@ -1,0 +1,5 @@
+.message-sent {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background: #ccc;
+}
