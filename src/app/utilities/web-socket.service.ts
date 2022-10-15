@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Message } from '../models/message.dto';
-import { TEST_SOCKET } from '../../environments/environment'
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class WebSocketService {
   constructor() {}
 
   public openWebSocket(){
-    this.webSocket = new WebSocket(TEST_SOCKET);
+    this.webSocket = new WebSocket(environment.websocket_prot+environment.base_api_url+environment.test_websockt);
     this.webSocket.onopen = (event) => {
       console.log("Opened Connection ", event);
     };

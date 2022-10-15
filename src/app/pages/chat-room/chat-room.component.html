@@ -11,15 +11,15 @@
         </div>
         <div class="col-9 h-100 position-relative px-0">
             <div class="conversation-container">
-                <div *ngFor="let m of this.webSocketService.chatMessages.reverse(); let even = even">
+                <div *ngFor="let m of this.messages.reverse(); let even = even">
                     <span *ngIf="!even">
                         <app-message-sent
-                            [content]="m.message">
+                            [content]="m">
                         </app-message-sent>
                     </span>
                     <span *ngIf="even">
                         <app-message-recieved
-                            [content]="m.message">
+                            [content]="m">
                         </app-message-recieved>
                     </span>
                 </div>
