@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-// import { HttpClientModule } from '@angular/common'
+import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { ChatRoomComponent } from './pages/chat-room/chat-room.component';
@@ -31,6 +31,7 @@ import { WebSocketService } from './utilities/web-socket.service';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     Routing,
     ReactiveFormsModule
   ],
