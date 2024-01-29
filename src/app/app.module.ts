@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MessageSentComponent } from './pages/chat-room/message-sent/message-sent.component';
 import { MessageRecievedComponent } from './pages/chat-room/message-recieved/message-recieved.component';
 import { WebSocketService } from './utilities/web-socket.service';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { WebSocketService } from './utilities/web-socket.service';
     FormsModule,
     HttpClientModule,
     Routing,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [WebSocketService],
   bootstrap: [AppComponent]
